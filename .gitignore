@@ -1,0 +1,52 @@
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+/.mvn/wrapper/maven-wrapper.jar
+
+# Eclipse/IntelliJ
+.classpath
+.project
+.settings/
+*.class
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+
+# Node
+node_modules/
+
+# Java
+*.jar
+*.war
+*.ear
+
+# Test output
+/test-classes/
+/test-results/
+
+# Karate reports and temporary artefacts (already under target, but make explicit)
+/target/karate-reports/
+/target/karate-reports_*/
+
+# Local env
+.env
+.env.local

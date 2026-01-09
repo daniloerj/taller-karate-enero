@@ -1,0 +1,150 @@
+[
+    {
+    "meta": {
+        "project": "karate-project",
+        "environment": "test",
+        "version": "1.0.0",
+        "generatedAt": "2026-01-09T12:00:00Z"
+    },
+    "users": [
+        {
+            "id": 1,
+            "name": "Ana Pérez",
+            "username": "anap",
+            "email": "ana.perez@example.com",
+            "roles": ["admin", "user"],
+            "active": true,
+            "createdAt": "2025-11-03T09:15:00Z",
+            "expectedStatus": 201
+        },
+        {
+            "id": 2,
+            "name": "Luis Gómez",
+            "username": "luisg",
+            "email": null,
+            "roles": ["user"],
+            "active": true,
+            "createdAt": "2025-12-20T14:35:00Z",
+            "expectedStatus": 201
+        },
+        {
+            "id": 3,
+            "name": "Test User",
+            "username": "testuser",
+            "roles": ["ci"],
+            "active": false,
+            "createdAt": "2026-01-02T07:00:00Z",
+            "expectedStatus": 201
+        }
+    ],
+    "products": [
+        {
+            "id": 101,
+            "sku": "KG-001",
+            "name": "Karate Gi",
+            "category": "apparel",
+            "price": 49.99,
+            "stock": 25,
+            "tags": ["new", "martial-arts", "cotton"],
+            "attributes": {
+                "sizes": ["S", "M", "L", "XL"],
+                "color": "white"
+            }
+        },
+        {
+            "id": 102,
+            "sku": "DM-100",
+            "name": "Dojo Mat",
+            "category": "equipment",
+            "price": 199.0,
+            "stock": 5,
+            "tags": ["safety", "foam"],
+            "dimensions": {
+                "length_cm": 200,
+                "width_cm": 100,
+                "thickness_cm": 4
+            }
+        },
+        {
+            "id": 103,
+            "sku": "TV-01",
+            "name": "Training Video: Basics",
+            "category": "digital",
+            "price": 0.0,
+            "stock": null,
+            "tags": ["video", "download"],
+            "downloadUrl": "https://example.com/downloads/training-basics.mp4"
+        }
+    ],
+    "orders": [
+        {
+            "id": 1001,
+            "userId": 1,
+            "items": [
+                {
+                    "productId": 101,
+                    "sku": "KG-001",
+                    "quantity": 1,
+                    "unitPrice": 49.99
+                },
+                {
+                    "productId": 102,
+                    "sku": "DM-100",
+                    "quantity": 1,
+                    "unitPrice": 199.0
+                }
+            ],
+            "total": 248.99,
+            "currency": "USD",
+            "createdAt": "2026-01-05T10:20:00Z",
+            "status": "shipped",
+            "shipping": {
+                "method": "standard",
+                "tracking": "TRACK123456"
+            }
+        },
+        {
+            "id": 1002,
+            "userId": 2,
+            "items": [],
+            "total": 0.0,
+            "currency": "USD",
+            "createdAt": "2026-01-07T16:45:00Z",
+            "status": "pending",
+            "notes": "Pending payment authorization"
+        },
+        {
+            "id": 1003,
+            "userId": 1,
+            "items": [
+                {
+                    "productId": 101,
+                    "sku": "KG-001",
+                    "quantity": 1000,
+                    "unitPrice": 49.99
+                }
+            ],
+            "total": 49990.0,
+            "currency": "USD",
+            "createdAt": "2026-01-08T08:00:00Z",
+            "status": "error",
+            "notes": "Quantity exceeds available stock (edge case)"
+        }
+    ],
+    "settings": {
+        "currency": "USD",
+        "taxPercent": 8.5,
+        "supportedLocales": ["en-US", "es-ES"],
+        "features": {
+            "guestCheckout": true,
+            "emailVerificationRequired": false
+        }
+    },
+    "samples": {
+        "strings": ["hola", "ñandú", "特殊字符", "emoji 👍"],
+        "nullValue": null,
+        "booleanTrue": true,
+        "booleanFalse": false,
+        "numbers": [0, -1, 3.1415, 1e6]
+    }
+}]

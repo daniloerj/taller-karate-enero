@@ -8,7 +8,12 @@ function fn() {
   }
   var config = {
     env: env,
-    myVarName: 'someValue'
+    // Functions for later use
+    generateToken: function() {
+      return 'token-' + java.util.UUID.randomUUID();
+    },
+    myVarName: 'someValue',
+    defaultHeaders: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'danilo-header': 'karate-header' },
   }
   if (env == 'dev') {
     // customize

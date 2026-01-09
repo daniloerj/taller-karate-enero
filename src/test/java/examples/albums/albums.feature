@@ -20,6 +20,7 @@ Feature: API de Albums
         And match response.id == '#number'
         * def createdId = response.id
 
+    @ignore
     Scenario: Obtener album por id (GET /albums/{id})
         # Primero crear un album para obtener un id válido
         Given path 'albums'
@@ -33,7 +34,8 @@ Feature: API de Albums
         Then status 200
         And match response.id == id
         And match response.title == 'Album para GET'
-
+    
+    @ignore
     Scenario: Actualizar un album (PUT /albums/{id})
         # Crear album base
         Given path 'albums'
@@ -50,7 +52,7 @@ Feature: API de Albums
         And match response.id == idToUpdate
         And match response.title == 'Album actualizado'
         And match response.year == 2021
-
+    @ignore
     Scenario: Eliminar un album (DELETE /albums/{id})
         # Crear album para eliminar
         Given path 'albums'

@@ -5,6 +5,8 @@ Feature: sample karate test script
   Background:
     * url baseUrl
     * print 'Running tests in environment:', ambiente
+    * def utils = read('classpath:examples/common/functions.js')()
+
 
   @getUsers @smoke @regression @positive
   Scenario: get all users and then get the first user by id
@@ -24,6 +26,7 @@ Feature: sample karate test script
     Given path 'users'
     And header Authorization = 'Bearer ' + token.response.token
     And header x-numero-aleatorio = generateToken()
+    And header x-username-aleatorio = utils.generateRandomUsername()
     And headers defaultHeaders
     And request newUser
     When method post

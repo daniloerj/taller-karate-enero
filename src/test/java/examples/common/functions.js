@@ -1,12 +1,26 @@
-function randomNumber(min = 0, max = 1, integer = false) {
-    if (min > max) [min, max] = [max, min];
+function fn() {
+  var utils = {};
+  utils.getCurrentTimestamp = function() {
+    return new Date().toISOString();
+  };
+  utils.generateRandomEmail = function() {
+    var randomString = Math.random().toString(36).substring(7);
+    return 'test.' + randomString + '@example.com';
+  };
 
-    if (integer) {
-        const imin = Math.ceil(min);
-        const imax = Math.floor(max);
-        if (imin > imax) return NaN;
-        return Math.floor(Math.random() * (imax - imin + 1)) + imin;
-    }
+  utils.generateRandomUsername = function() {
+    var randomString = Math.random().toString(36).substring(7);
+    return 'user_' + randomString;
+  }
 
-    return Math.random() * (max - min) + min;
+  utils.generateRandomPassword = function() {
+    var randomString = Math.random().toString(36).substring(7);
+    return 'pass_' + randomString;
+  }
+
+  utils.generateNumberInRange = function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  return utils;
 }

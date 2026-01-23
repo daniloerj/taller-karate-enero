@@ -1,4 +1,4 @@
-# Karate Project - Taller Karate Lite
+# Karate Project - Taller Karate
 
 Proyecto de ejemplo que contiene tests de Karate (API) usando Maven.
 
